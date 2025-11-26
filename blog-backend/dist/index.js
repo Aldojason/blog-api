@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const postRoutes_1 = __importDefault(require("./routes/postRoutes"));
+const errorHandler_1 = require("./middleware/errorHandler");
 const app = (0, express_1.default)();
 const PORT = 5000;
 // Middleware
@@ -17,7 +18,7 @@ app.use("/api/posts", postRoutes_1.default);
 app.get("/", (req, res) => {
     res.send("Welcome to the Blog API");
 });
-const errorHandler_1 = require("./middleware/errorHandler");
+// Error handler middleware (must be after all routes)
 app.use(errorHandler_1.errorHandler);
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

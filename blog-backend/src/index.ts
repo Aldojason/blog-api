@@ -1,8 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import postRoutes from "./routes/postRoutes";
-
-
+import { errorHandler } from "./middleware/errorHandler";
 
 const app: Application = express();
 const PORT = 5000;
@@ -19,7 +18,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to the Blog API");
 });
 
-import { errorHandler } from "./middleware/errorHandler";
+// Error handler middleware (must be after all routes)
 app.use(errorHandler);
 
 // Start server
