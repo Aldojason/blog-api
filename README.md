@@ -1,53 +1,90 @@
-📘 Blog App (React + TypeScript + Express)
+Blog App – Full Stack (React + TypeScript + Express)
 
-A simple full-stack Blog App built using React (Vite), TypeScript, Express.js, and Axios.
-Backend is deployed on Railway, and frontend on Netlify.
+A full-stack blog application built using React (Vite), TypeScript, Express.js, and Axios.
+Backend is deployed on Railway and frontend on Netlify.
 
-🚀 Live Links
-🔹 Backend (API)
+Live Links
+Backend (API)
 https://blog-api-production-4be4.up.railway.app
 
-🔹 Frontend (Netlify)
-
+Frontend (Netlify)
 https://jaz-blog.netlify.app
 
-🛠 Tech Used
+API Base URL
+https://blog-api-production-4be4.up.railway.app/api
 
-React + TypeScript
+Tech Stack
+Frontend
+
+React (Vite)
+
+TypeScript
 
 Axios
 
 Tailwind CSS
 
-Node.js + Express
+Backend
 
-Railway (Backend hosting)
+Node.js
 
-Netlify (Frontend hosting)
+Express.js
 
-📡 API Base URL
-https://blog-api-production-4be4.up.railway.app/api
+TypeScript
 
-🔧 Backend Setup
-cd blog-api
+CORS
+
+Deployment
+
+Railway (Backend)
+
+Netlify (Frontend)
+
+Features
+
+Create a blog post
+
+View all blog posts
+
+Backend API with TypeScript
+
+Clean responsive UI with Tailwind
+
+Project Structure
+blog-api/
+  blog-backend/
+    src/
+      controllers/
+      routes/
+      index.ts
+  blog-frontend/
+    src/
+      App.tsx
+      api.ts
+      main.tsx
+
+Backend Setup
+cd blog-backend
 npm install
 npm run dev
 
-🎨 Frontend Setup
+Production Build
+npm run build
+npm start
+
+Frontend Setup
 cd blog-frontend
 npm install
 npm run dev
 
-✨ Features
+API Configuration
 
-Create a blog post
+Update blog-frontend/src/api.ts:
 
-View all posts
+export const api = axios.create({
+  baseURL: "https://blog-api-production-4be4.up.railway.app/api"
+});
 
-Clean UI with Tailwind
+License
 
-Fully deployable full-stack app
-
-If you want, I can also generate a beautiful styled README with logos, badges, screenshots, and sections.
-
-ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+Free to use for learning and personal projects.
